@@ -1,0 +1,215 @@
+/*login*/
+.legacy-login {
+  z-index: 2;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background-image: url("../login/image/school.jpg");
+  font-family: 'system-ui';
+   
+  
+
+}
+
+/*container*/
+.legacy-login .container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+/*form del login */
+.legacy-login .container form {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.legacy-login .form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.legacy-login .sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+/*inputs */
+.legacy-login .input-style {
+  width: 95%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/*Botones*/
+.legacy-login .container .btn-style {
+  background: #10b981;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.legacy-login .container .btn-style:hover {
+  background: #059669;
+}
+
+/* Link de regreso */
+.legacy-login .back-link {
+  opacity: 0.8;
+  margin-top: 12px;
+}
+
+.legacy-login .back-link a {
+  color: #3cf49e;
+  text-decoration: none;
+}
+
+.legacy-login .back-link a:hover {
+  text-decoration: underline;
+}
+
+/* parte derecha */
+.legacy-login .toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+
+.legacy-login .toggle {
+  height: 100%;
+  width: 200%;
+  background: linear-gradient(to right, #07488e, #5daeeb);
+  color: #fff;
+  position: relative;
+  left: -100%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.legacy-login .toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.legacy-login .toggle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* texto informativo */
+.welcome-container {
+  text-align: center;
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Imagenes*/
+.logo-imag {
+  position: absolute;
+  top: 4%;
+  right: 50px;
+  width: 90px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.gif-idea{
+  position: absolute;
+  top: 2%;
+  left: 20px;     
+  width: 100px;
+  border-radius: 50%;
+  opacity: 0.5;/*transparencia */
+}
+
+.gif-idea1 {
+  position: absolute;
+  bottom: 20px; /*lo posiciona desde abajo */
+  right: 20px;       
+  height: 120px;  
+  opacity: 0.7;       
+
+}
+
+
+/* ===== TIPOGRAFÍA ===== */
+.titulo {
+  font-family: "sans-serif";
+  font-size: 40px;
+}
+
+.titulo2 {
+  font-family: "sans-serif";
+  font-size: 20px;
+  
+}
+
+
+.quiz  {
+  color: #cb280f;
+  font-family: "Bebas Neue";
+  
+  margin-bottom: 5px;
+}
+
+.sabe {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.lo {
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.todo {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Helvetica";
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 16px;
+}

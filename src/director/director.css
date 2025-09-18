@@ -1,0 +1,119 @@
+/* director.css */
+
+/* =========================
+   Variables de tema (opcionales)
+   Cambia estos valores y todo el estilo seguirá coherente
+========================= */
+:root {
+  --bg-start: #f5f7fb;
+  --bg-mid:   #ffffff;
+  --bg-end:   #eef2f7;
+
+  --card-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.12);
+  --focus-ring: 0 0 0 3px rgba(59, 130, 246, 0.35); /* azul */
+}
+
+/* =========================
+   Fondo opcional (si no quieres usar Tailwind para esto)
+   Aplica en el wrapper si lo deseas: className="director-surface"
+========================= */
+.director-surface {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-mid), var(--bg-end));
+  background-attachment: fixed;
+}
+
+/* =========================
+   Tarjetas: animación y elevación
+========================= */
+.card-anim {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  box-shadow: var(--card-shadow);
+  will-change: transform, box-shadow;
+}
+
+.card-anim:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Para usuarios con 'reducir movimiento' activado */
+@media (prefers-reduced-motion: reduce) {
+  .card-anim,
+  .card-anim:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* =========================
+   Sidebar: foco y estados (complemento a Tailwind)
+========================= */
+.sidebar-item {
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.sidebar-item:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+/* Estado "activo" opcional si manejas rutas:
+   agrega className="sidebar-item is-active" al item actual */
+.sidebar-item.is-active {
+  outline: none;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* =========================
+   Header/links: accesibilidad de foco
+========================= */
+a:focus-visible,
+button:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+/* =========================
+   Scrollbar sutil (solo navegadores que lo soportan)
+========================= */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.25) transparent;
+}
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.25);
+  border-radius: 8px;
+}
+
+/* =========================
+   Utilidad opcional: contenedor centrado
+   Si quieres centrar un bloque vertical/horizontal
+========================= */
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   Tipografía opcional en el área del director
+========================= */
+.director-font {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Sans",
+               "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+               "Noto Color Emoji";
+}

@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* ====== PALETA BLANCO + CELESTE ====== */
+:root{
+  --bg-1: #ffffff;
+  --bg-2: #eef6ff;
+  --bg-3: #e2efff;
+
+  --surface: #ffffff;
+  --header:  #d7eaff;
+  --border:  #e5eefb;
+
+  --text:   #0f172a;   /* slate-900 */
+  --muted:  #475569;   /* slate-600 */
+
+  --primary:     #2563eb; /* azul 600 */
+  --primary-700: #1d4ed8; /* azul 700 */
+}
+
+/* Fuente global */
+html{
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--text);
+}
+
+/* ====== UTILIDADES Y ANIMACIONES ====== */
+@layer utilities {
+  /* Fade-in hacia arriba */
+  .fade-in-up{ animation: fadeInUp .7s cubic-bezier(.22,1,.36,1) both; }
+  @keyframes fadeInUp{ from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+
+  /* Botón con brillo */
+  .shine-button{ position:relative; overflow:hidden; isolation:isolate; }
+  .shine-button::after{
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.6), transparent);
+    transform: translateX(-120%);
+  }
+  .shine-button:hover::after{ transform: translateX(120%); transition: transform .85s; }
+
+  /* TÍTULO animado + contorno */
+  .title-animated{
+    background-image: linear-gradient(90deg,#60a5fa 0%, #22d3ee 50%, #93c5fd 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    animation: titleShift 6s linear infinite;
+  }
+  @keyframes titleShift{ 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+
+  .title-outline{
+    -webkit-text-stroke: 1.2px rgba(15,23,42,.25);
+    text-shadow: 0 2px 0 rgba(255,255,255,.6), 0 10px 24px rgba(37,99,235,.20);
+  }
+
+  /* FONDO animado (gradiente desplazándose) */
+  .page-shift{
+    background-image: linear-gradient(135deg, var(--bg-2), var(--bg-3), var(--bg-1));
+    background-size: 300% 300%;
+    animation: pageShift 14s linear infinite;
+  }
+  @keyframes pageShift{ 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+
+  /* Header animado suave */
+  .header-shift{
+    background-image: linear-gradient(90deg, #eaf3ff, #cfe7ff, #eaf3ff);
+    background-size: 250% 250%;
+    animation: headerShift 10s linear infinite;
+  }
+  @keyframes headerShift{ 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+}

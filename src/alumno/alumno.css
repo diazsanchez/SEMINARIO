@@ -1,0 +1,188 @@
+/* Contenedor principal */
+.alumno-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0f172a; /* slate-900 */
+  color: #e2e8f0; /* slate-200 */
+}
+
+/* Sidebar */
+.alumno-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 18rem; /* 72 */
+  padding: 1rem;
+  background-color: rgba(15,23,42,0.95);
+  border-right: 1px solid rgba(255,255,255,0.1);
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.alumno-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.alumno-logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background-color: #4f46e5; /* indigo-600 */
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 1.125rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.alumno-title {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+/* Navegación */
+.alumno-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alumno-parent-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.alumno-parent-btn:hover {
+  background-color: #1e293b; /* slate-700 */
+}
+
+.alumno-parent-btn.active {
+  background-color: #4f46e5; /* indigo-600 */
+  color: white;
+}
+
+.arrow {
+  margin-left: auto;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  transition: transform 0.3s;
+}
+
+.arrow.rotate {
+  transform: rotate(90deg);
+}
+
+.alumno-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+}
+
+.alumno-link:hover {
+  background-color: #1e293b;
+  color: white;
+}
+
+.alumno-link.sublink {
+  padding-left: 2.5rem;
+  font-size: 0.8rem;
+}
+
+/* Logout */
+.alumno-logout {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #dc2626; /* red-600 */
+  color: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.alumno-logout:hover {
+  background-color: #ef4444; /* red-500 */
+}
+
+/* Contenido */
+.alumno-content {
+  margin-left: 18rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.alumno-card {
+  background-color: rgba(30,41,59,0.2); /* slate-800/20 */
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.alumno-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+  padding: 0 1rem;
+  background-color: white;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.alumno-header button {
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.alumno-header button:hover {
+  background-color: #f1f5f9; /* slate-100 */
+}
+
+.alumno-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+}
+
+.avatar.light { background-color: #e2e8f0; }
+.avatar.dark { background-color: #cbd5e1; }
+
+/* Main */
+.alumno-main {
+  padding: 1.5rem;
+  min-height: calc(100vh - 3.5rem);
+  background-color: white;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
