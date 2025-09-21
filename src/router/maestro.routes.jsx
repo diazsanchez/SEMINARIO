@@ -1,13 +1,10 @@
 import { Navigate } from "react-router-dom";
-import Maestro from "../maestro/maestro.jsx";
-import Protected from "../router/Protected.jsx";
+import Protected from "./Protected.jsx"; // Ajuste para importar Protected desde la misma carpeta
 
-// Importa las vistas del maestro
-import Dashboard from "../";
-import Grado from "../maestro/grado/grado.jsx";
-import Materia from "../maestro/materia/materia.jsx";
-import Quiz from "../maestro/quiz/quiz.jsx";
-import Ranking from "../maestro/ranking/ranking.jsx";
+// Importa las vistas del maestro desde src/maestro/
+import Maestro from "../maestro/Maestro.jsx";
+import Dashboard from "../maestro/dashboard/dashboard.jsx";
+import Materia from "../maestro/materia/Materia.jsx";
 
 export const maestroRoutes = [
   {
@@ -18,12 +15,9 @@ export const maestroRoutes = [
       </Protected>
     ),
     children: [
-      { index: true, element: <Navigate to="dashboard" replace /> }, // default seguro
+      { index: true, element: <Navigate to="dashboard" replace /> }, // Ruta predeterminada
       { path: "dashboard", element: <Dashboard /> },
-      { path: "grado",     element: <Grado /> },
-      { path: "materia",   element: <Materia /> },
-      { path: "quiz",      element: <Quiz /> },
-      { path: "ranking",   element: <Ranking /> },
+      { path: "materia/lista", element: <Materia /> }, // Ajuste para coincidir con NavLink
     ],
   },
 ];

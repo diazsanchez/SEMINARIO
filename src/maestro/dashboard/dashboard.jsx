@@ -1,18 +1,17 @@
-// src/dashboard/Maestro.jsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./maestro.css";
+import "../maestro.css"; // Importación de estilos generales
+import "./dashboard.css"; // Estilos específicos para Dashboard
 
 const LOCAL_STORAGE_KEY = "quizgames.quizzes";
 
-const Maestro = () => {
+const Dashboard = () => {
   const navigate = useNavigate();
 
   const [activeSection, setActiveSection] = useState("dashboard");
   const [selectedGrado, setSelectedGrado] = useState(null);
   const [selectedMateria, setSelectedMateria] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [materiaDropdownOpen, setMateriaDropdownOpen] = useState(false);
   const [showEstados, setShowEstados] = useState(false);
   const [filtroEstado, setFiltroEstado] = useState("Todo");
 
@@ -73,13 +72,11 @@ const Maestro = () => {
     setSelectedGrado(grado);
     setSelectedMateria(null);
     setActiveSection("materiasList");
-    setMateriaDropdownOpen(false);
   };
 
   const handleMateriaSelect = (materia) => {
     setSelectedMateria(materia);
     setActiveSection("quiz");
-    setMateriaDropdownOpen(false);
   };
 
   // --- Datos ---
@@ -120,64 +117,6 @@ const Maestro = () => {
   // --- Render ---
   return (
     <div className="container">
-      {/* Sidebar */}
-      <nav className="sidebar">
-        <h2>QuizGames</h2>
-        <ul>
-          <li
-            onClick={() => {
-              setActiveSection("dashboard");
-              setSelectedGrado(null);
-              setSelectedMateria(null);
-            }}
-          >
-            Dashboard
-          </li>
-          <li>
-            <select
-              value={selectedGrado || ""}
-              onChange={(e) => handleGradoSelect(e.target.value)}
-            >
-              <option value="" disabled>
-                -- Seleccionar grado --
-              </option>
-              <option value="Primero Básico">Primero Básico</option>
-              <option value="Segundo Básico">Segundo Básico</option>
-              <option value="Tercero Básico">Tercero Básico</option>
-            </select>
-          </li>
-          <li
-            onClick={() => {
-              if (!selectedGrado)
-                return alert("Por favor, seleccione primero un grado.");
-              setMateriaDropdownOpen((prev) => !prev);
-            }}
-          >
-            Materia {materiaDropdownOpen ? "▲" : "▼"}
-          </li>
-          {materiaDropdownOpen && (
-            <ul className="materia-dropdown">
-              {materiasMostrar.length > 0 ? (
-                materiasMostrar.map((mat, idx) => (
-                  <li key={idx} onClick={() => handleMateriaSelect(mat)}>
-                    {mat}
-                  </li>
-                ))
-              ) : (
-                <li style={{ fontStyle: "italic" }}>
-                  No hay materias disponibles
-                </li>
-              )}
-            </ul>
-          )}
-          <li onClick={() => setActiveSection("quiz")}>Quiz</li>
-          <li onClick={() => setActiveSection("ranking")}>Ranking</li>
-        </ul>
-        <button className="logout-btn" onClick={handleLogout}>
-          Cerrar sesión
-        </button>
-      </nav>
-
       {/* Main Content */}
       <main className="main-content">
         {/* --- Dashboard --- */}
@@ -460,4 +399,4 @@ const Maestro = () => {
   );
 };
 
-export default Maestro;
+export default Dashboard;
